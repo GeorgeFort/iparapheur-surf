@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<page>
+   <id>calendar</id>
+   <title>Company Calendar</title>
+   <template-instance>landing</template-instance>
+   <authentication>none</authentication>
+   <components>
+      <component>
+         <region-id>main</region-id>
+         <url>/company/calendar</url>
+      </component>   
+   </components>
+</page>

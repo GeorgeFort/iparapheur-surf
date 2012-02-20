@@ -1,0 +1,1 @@
+model.headerTitle = "Sample Components";

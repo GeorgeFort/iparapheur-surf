@@ -1,0 +1,5 @@
+<webscript>
+  <shortname>Gets the current User info</shortname>
+  <description>Gets the current User info</description>
+  <url>/user/info</url>
+</webscript>

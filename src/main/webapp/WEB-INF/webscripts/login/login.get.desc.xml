@@ -1,0 +1,5 @@
+<webscript>
+  <shortname>Login webscript</shortname>
+  <description>The login webscript</description>
+  <url>/company/login</url>
+</webscript>

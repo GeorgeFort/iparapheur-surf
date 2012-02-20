@@ -1,0 +1,22 @@
+<alfresco-config>
+
+	<config evaluator="string-compare" condition="WebFramework">
+
+		<web-framework>
+
+			<!-- Autowire Runtime Settings -->
+			<autowire>
+			
+			    <!-- Pick the runtime: classpath, webapp, local, cmis -->			    
+			    <runtime>webapp</runtime>
+			
+			    <!-- Pick the mode: development, preview, production -->			    
+			    <mode>development</mode>
+			    
+			</autowire>
+
+		</web-framework>
+
+	</config>
+
+</alfresco-config>
