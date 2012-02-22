@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.extensions.surf</groupId>
-		<artifactId>spring-surf-parent</artifactId>
-		<version>1.1.0-SNAPSHOT</version>
-		<relativePath>../../pom.xml</relativePath>
-	</parent>
-	<artifactId>spring-surf-application</artifactId>
-	<name>Spring Surf - Application</name>
-	<description>Spring Surf - Application</description>
-	<url>spring-surf/${project.artifactId}</url>
+
+    <groupId>org.adullact.iparapheur</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+	<artifactId>iparapheur-surf</artifactId>
+	<name>iParapheur Surf</name>
+	<description>iParapheur Surf</description>
+	<url>${project.artifactId}</url>
+
 	<packaging>war</packaging>
 
 	<properties>
@@ -23,6 +21,7 @@
 			<!-- Define Eclipse Integration Plugin -->
 			<plugin>
 				<artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.6</version>
 				<configuration>
 					<wtpversion>1.5</wtpversion>
 				</configuration>
@@ -34,11 +33,11 @@
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>7.0.1.v20091125</version>
 		        <configuration>
-				    <scanIntervalSeconds>1</scanIntervalSeconds>
+				    <scanIntervalSeconds>10</scanIntervalSeconds>
 				    <stopPort>9966</stopPort>
 				    <stopKey>foo</stopKey>
 					<webAppConfig>
-						<contextPath>/</contextPath>
+						<contextPath>/toto</contextPath>
 					</webAppConfig>
 					<connectors>
 						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
@@ -50,8 +49,21 @@
 					</scanTargets>
 		        </configuration>
 			</plugin>
-			
-		</plugins>
+
+            <!--plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>lesscss-maven-plugin</artifactId>
+                <version></version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin-->
+
+        </plugins>
 	</build>
 
 	<dependencies>
@@ -60,14 +72,14 @@
 		<dependency>
 			<groupId>org.springframework.extensions.surf</groupId>
 			<artifactId>spring-surf</artifactId>
-			<version>${project.version}</version>
+			<version>1.1.0-SNAPSHOT</version>
 		</dependency>
 		
 		<!-- Surf API -->
 		<dependency>
 			<groupId>org.springframework.extensions.surf</groupId>
 			<artifactId>spring-surf-api</artifactId>
-			<version>${project.version}</version>
+			<version>1.1.0-SNAPSHOT</version>
 		</dependency>
 				
 		<!-- Third party dependencies -->
