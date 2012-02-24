@@ -1,0 +1,70 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.adullact.iparapheur</groupId>
+        <artifactId>iparapheur-surf</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>org.adullact.iparapheur</groupId>
+    <artifactId>iparapheur-surf-core</artifactId>
+    <description>Parapheur electronique Surf Core</description>
+    <packaging>jar</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>iparapheur core module</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+    <repositories>
+        <repository>
+            <id>adullact</id>
+            <url>http://archiva.adullact.net/archiva/repository/internal/</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>adullact</id>
+            <url>http://archiva.adullact.net/archiva/repository/internal/</url>
+        </pluginRepository>
+    </pluginRepositories>
+    <dependencies>
+    
+    </dependencies>
+    <build>
+        <plugins>
+            <!-- Configures compiler to use Java 1.5. Maven default is Java 1.3 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+
+            <!--
+                Since Alfresco 3.2, cleaner plugin fails to delete some files,
+                which are symlinks.
+                maven-clean-plugin is able to delete symlikns since 2.3.
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>2.3</version>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
+
+
+
