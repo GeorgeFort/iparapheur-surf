@@ -1,54 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.adullact.iparapheur</groupId>
     <version>1.0.0-SNAPSHOT</version>
-	<artifactId>iparapheur-surf</artifactId>
-	<name>iParapheur Surf</name>
-	<description>iParapheur Surf</description>
-	<url>${project.artifactId}</url>
+    <artifactId>iparapheur-surf</artifactId>
+    <name>iParapheur Surf</name>
+    <description>iParapheur Surf</description>
+    <url>${project.artifactId}</url>
 
-	<packaging>war</packaging>
+    <packaging>war</packaging>
 
-	<properties>
-		<jetty.port>5150</jetty.port>
-	</properties>
+    <properties>
+        <jetty.port>5150</jetty.port>
+    </properties>
 
-	<build>
-		<plugins>
+    <repositories>
+        <!-- Alfresco Community Maven Repositories -->
+        <repository>
+            <id>alfresco-public-snapshots</id>
+            <url>http://maven.alfresco.com/nexus/content/groups/public-snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>alfresco-public-releases</id>
+            <url>http://maven.alfresco.com/nexus/content/groups/public</url>
+        </repository>
+        <repository>
+            <id>spring-snapshot</id>
+            <name>Spring Portfolio Snapshot Repository</name>
+            <url>http://s3.amazonaws.com/maven.springframework.org/snapshot</url>
+        </repository>
+        <repository>
+            <id>snapshots</id>
+            <name>Surf Snapshots</name>
+            <url>http://dev-parapheur.local:8081/nexus/content/repositories/snapshots</url>
+        </repository>
 
-			<!-- Define Eclipse Integration Plugin -->
-			<plugin>
-				<artifactId>maven-eclipse-plugin</artifactId>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>alfresco-public-snapshots</id>
+            <url>http://maven.alfresco.com/nexus/content/groups/public-snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>alfresco-public-releases</id>
+            <url>http://maven.alfresco.com/nexus/content/groups/public</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+
+    <build>
+        <plugins>
+
+            <!-- Define Eclipse Integration Plugin -->
+            <plugin>
+                <artifactId>maven-eclipse-plugin</artifactId>
                 <version>2.6</version>
-				<configuration>
-					<wtpversion>1.5</wtpversion>
-				</configuration>
-			</plugin>
-			
-			<!-- Jetty Plugin for smoke screen tests -->
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>7.0.1.v20091125</version>
-		        <configuration>
-				    <scanIntervalSeconds>10</scanIntervalSeconds>
-				    <stopPort>9966</stopPort>
-				    <stopKey>foo</stopKey>
-					<webAppConfig>
-						<contextPath>/toto</contextPath>
-					</webAppConfig>
-					<connectors>
-						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-							<port>${jetty.port}</port>
-						</connector>
-					</connectors>
-					<scanTargets>
-						<scanTarget>src/main/webapp</scanTarget>
-					</scanTargets>
-		        </configuration>
-			</plugin>
+                <configuration>
+                    <wtpversion>1.5</wtpversion>
+                </configuration>
+            </plugin>
+
+            <!-- Jetty Plugin for smoke screen tests -->
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>7.0.1.v20091125</version>
+                <configuration>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <stopPort>9966</stopPort>
+                    <stopKey>foo</stopKey>
+                    <webAppConfig>
+                        <contextPath>/toto</contextPath>
+                    </webAppConfig>
+                    <connectors>
+                        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+                            <port>${jetty.port}</port>
+                        </connector>
+                    </connectors>
+                    <scanTargets>
+                        <scanTarget>src/main/webapp</scanTarget>
+                    </scanTargets>
+                </configuration>
+            </plugin>
 
             <!--plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -64,37 +114,37 @@
             </plugin-->
 
         </plugins>
-	</build>
+    </build>
 
-	<dependencies>
-	
-		<!-- Surf -->
-		<dependency>
-			<groupId>org.springframework.extensions.surf</groupId>
-			<artifactId>spring-surf</artifactId>
-			<version>1.1.0-SNAPSHOT</version>
-		</dependency>
-		
-		<!-- Surf API -->
-		<dependency>
-			<groupId>org.springframework.extensions.surf</groupId>
-			<artifactId>spring-surf-api</artifactId>
-			<version>1.1.0-SNAPSHOT</version>
-		</dependency>
-				
-		<!-- Third party dependencies -->
-		<dependency>
-			<groupId>org.tuckey</groupId>
-			<artifactId>urlrewritefilter</artifactId>
-			<version>3.1.0</version>						
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.1</version>
-			<scope>compile</scope>
-		</dependency>
-		
-	</dependencies>
+    <dependencies>
+
+        <!-- Surf -->
+        <dependency>
+            <groupId>org.springframework.extensions.surf</groupId>
+            <artifactId>spring-surf</artifactId>
+            <version>1.1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- Surf API -->
+        <dependency>
+            <groupId>org.springframework.extensions.surf</groupId>
+            <artifactId>spring-surf-api</artifactId>
+            <version>1.1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- Third party dependencies -->
+        <dependency>
+            <groupId>org.tuckey</groupId>
+            <artifactId>urlrewritefilter</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.1</version>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
 
 </project>
