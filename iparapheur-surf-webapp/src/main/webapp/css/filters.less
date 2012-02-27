@@ -1,0 +1,56 @@
+//Importer les composants de bootstrap, principalement les mixins et variables.
+    @import "bootstrap/variables.less";
+    @import "bootstrap/mixins.less";
+
+#dashboard-filters{
+	height: 515px;
+	z-index: 2;
+	position: fixed;
+	top: 55px;
+	left:0px;
+	box-shadow: 3px 3px 5px 6px #bbb;
+	#dashboard-filters-content{
+		border-top: 1px solid @gray;
+		border-bottom: 1px solid @gray;
+		margin-right:-4px;
+		display: inline-block;
+		min-height: 100%;
+		width:450px;
+		background-color: @white;
+		fieldset{
+			.control-label{
+				vertical-align:top;
+				input{
+					vertical-align:top;
+				}
+			}
+			input.datepicker{
+				width: 150px;
+				margin-right: 10px;
+			}
+		}
+		#filters-fieldset-save{
+			margin-top:15px;
+		}
+	}
+
+	#dashboard-filters-title{
+		margin-left: -1px;
+		border: 1px solid @gray;
+		 #gradient > .horizontal(@grayLight, darken(@grayLight,  10%));
+		vertical-align: top;
+		min-height: 100%;
+		display: inline-block;
+		&:hover{
+			cursor:pointer;
+		}
+	}
+
+	#dashboard-filters-title img{
+		/* centrer l'élément en hauteur */
+	}
+
+	&, #dashboard-filters-title{
+		.border-bottom-right-radius(7px);
+	}
+}

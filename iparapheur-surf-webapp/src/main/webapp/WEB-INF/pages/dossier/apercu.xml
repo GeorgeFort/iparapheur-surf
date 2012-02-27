@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<page>
+   <id>apercu</id>
+   <title>Aperçu de dossier</title>
+   <template-instance>default</template-instance>
+   <authentication>user</authentication>
+   <order-id>0</order-id>
+   <components>
+      <component>
+         <region-id>main</region-id>
+         <url>/dossier/apercu</url>
+      </component>     
+   </components>
+   <!--<associations>
+      <page-association>
+         <dest-id>products</dest-id>
+         <assoc-type>child</assoc-type>
+      </page-association>
+   </associations>-->
+</page>

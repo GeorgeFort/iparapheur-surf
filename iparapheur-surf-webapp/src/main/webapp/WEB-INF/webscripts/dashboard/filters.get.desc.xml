@@ -1,0 +1,5 @@
+<webscript>
+  <shortname>Filters</shortname>
+  <description>Dashboard Filters</description>
+  <url>/dashboard/filters</url>
+</webscript>

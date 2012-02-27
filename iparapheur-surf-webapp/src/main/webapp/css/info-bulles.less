@@ -1,0 +1,36 @@
+//Importer les composants de bootstrap, principalement les mixins et variables.
+    @import "bootstrap/variables.less";
+    @import "bootstrap/mixins.less";
+
+div.info-bulle{
+	position:relative; 
+	display: inline;
+	cursor: help;
+
+	&:hover{
+		z-index:1;
+	}
+
+	div{
+		display: none;
+	}
+
+	&:hover .info-bulle-content{ 
+		/*le contenu de la balise div ne 
+		sera visible que pour l'état a:hover */
+		display:block; 
+		position:absolute;
+		top:0.7m;
+		//left:1em;
+		width:250px;
+		text-align: justify;
+		font-weight:normal;
+		padding:10px;
+		background-color: @grayLighter;
+		border: 1px solid @grayDark;
+		h4{
+			margin-bottom: 5px;
+		}
+		
+	}
+}

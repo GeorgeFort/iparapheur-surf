@@ -1,0 +1,33 @@
+//Importer les composants de bootstrap, principalement les mixins et variables.
+    @import "bootstrap/variables.less";
+    @import "bootstrap/mixins.less";
+
+.modal{
+	left: 40%;
+	max-height: 700px;
+	width: auto;
+	.modal-footer{
+		clear:both;
+	}
+	
+	.liste-dossiers{
+		height: 400px;
+		overflow:auto;
+	}
+	
+	textarea{
+		height: 80px;
+		width: 80%;
+	}
+	
+	.validator{
+		height: 80px;
+		width: 80%;
+		background-color: @gray;
+		float: left;
+	}
+	
+	.btn{
+		margin-top: 40px;
+	}
+}
