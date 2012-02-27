@@ -1,0 +1,5 @@
+<webscript>
+  <shortname>Dashboard</shortname>
+  <description>Dashboard main region</description>
+  <url>/dashboard/dashboard</url>
+</webscript>

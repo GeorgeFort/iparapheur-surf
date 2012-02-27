@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<page>
+   <id>dashboard</id>
+   <title>Tableau de bord</title>
+   <template-instance>dashboard</template-instance>
+   <authentication>user</authentication>
+   <order-id>0</order-id>
+   <components>
+      <component>
+         <region-id>main</region-id>
+         <url>/dashboard/dashboard</url>
+      </component>
+      <component>
+         <region-id>modals</region-id>
+         <url>/dashboard/modals</url>
+      </component>     
+   </components>
+   <!--<associations>
+      <page-association>
+         <dest-id>products</dest-id>
+         <assoc-type>child</assoc-type>
+      </page-association>
+   </associations>-->
+</page>

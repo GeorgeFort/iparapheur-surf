@@ -1,0 +1,1 @@
+<link rel="stylesheet/less" type="text/css" href="${url.context}/res/css/dashboard-modal.less" />
